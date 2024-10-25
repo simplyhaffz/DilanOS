@@ -9,7 +9,7 @@
         body {
             font-family: courier;
             background-color: black;
-            margin: 120px;
+            margin: 10px; /* Reduced margin for mobile view */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -29,30 +29,46 @@
             display: flex;
             justify-content: center;
             margin-bottom: 20px; /* Space between rows */
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
         }
 
         /* First row with 4:5 aspect ratio */
         .image-row.first img {
-            width: 300px; /* Increased width for larger size */
-            height: 375px; /* Height adjusted for 4:5 */
+            width: calc(100% / 3 - 20px); /* Responsive width for 3 images */
+            height: auto; /* Maintain aspect ratio */
+            max-height: 375px; /* Max height for larger displays */
             border: darkgrey solid 1px;
-            margin: 0 10px; /* Increased space between images */
+            margin: 0 10px; /* Space between images */
         }
 
         /* Second row with 4:3 aspect ratio */
         .image-row.second img {
-            width: 400px; /* Width for 4:3 aspect ratio */
-            height: 300px; /* Height adjusted for 4:3 */
+            width: calc(100% / 3 - 20px); /* Responsive width for 3 images */
+            height: auto; /* Maintain aspect ratio */
+            max-height: 300px; /* Max height for larger displays */
             border: darkgrey solid 1px;
-            margin: 0 10px; /* Increased space between images */
+            margin: 0 10px; /* Space between images */
         }
 
         /* Last row with 4:5 aspect ratio */
         .image-row.last img {
-            width: 300px; /* Increased width for larger size */
-            height: 375px; /* Height adjusted for 4:5 */
+            width: calc(100% / 2 - 20px); /* Responsive width for 2 images */
+            height: auto; /* Maintain aspect ratio */
+            max-height: 375px; /* Max height for larger displays */
             border: darkgrey solid 1px;
-            margin: 0 10px; /* Increased space between images */
+            margin: 0 10px; /* Space between images */
+        }
+
+        /* Media query for smaller screens */
+        @media (max-width: 600px) {
+            .image-row.first img,
+            .image-row.second img {
+                width: calc(100% - 20px); /* Full width for single column on small screens */
+            }
+
+            .image-row.last img {
+                width: calc(50% - 20px); /* 2 images in last row */
+            }
         }
     </style>
 </head>
