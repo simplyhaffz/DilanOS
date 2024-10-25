@@ -1,0 +1,44 @@
+<!DOCTYPE html>    
+<html lang="en">       
+<head><link rel="shortcut icon" type="image/x-icon" href="newcomplogo.jpg" />   
+<title>Beyond The Dreams</title>  
+<meta charset="utf-8">               
+<meta name="viewport" content="width=device-width, initial-scale=1">         
+   <body oncontextmenu="return false;">                                                  
+<style>                                                                                                                                                         
+body {                                                                                                                                      
+ font-family: courier;                                                                                                                   
+ background-color: black; 
+ margin: 120px;  
+}                                                                                                                                                                        
+P{   
+  font-family: verdana;           
+  font-size:12;       
+  color: lavender;   
+}  
+header{   
+  padding: 10px; 
+} 
+
+</style>
+<head><body><center>
+
+         
+          <img src="dln1" style="border:darkgrey; border-style:solid; border-width:1px;" width='350' height='280'>
+           <img src="dln2" style="border:darkgrey; border-style:solid; border-width:1px;" width='220' height='280'>
+            <img src="dln3" style="border:darkgrey; border-style:solid; border-width:1px;" width='380' height='280'>
+    <img src="dln4" style="border:darkgrey; border-style:solid; border-width:1px;" width='280' height='280'>
+           <img src="dln5" style="border:darkgrey; border-style:solid; border-width:1px;" width='200' height='280'>
+            
+           <img src="dln6" style="border:darkgrey; border-style:solid; border-width:1px;" width='380' height='280'>
+           
+           <img src="dln7" style="border:darkgrey; border-style:solid; border-width:1px;" width='200' height='280'>
+            <img src="dln8" style="border:darkgrey; border-style:solid; border-width:1px;" width='280' height='280'>
+         
+              
+ 
+  
+
+<br><br>
+  </body>
+</html>
