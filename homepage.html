@@ -1,0 +1,693 @@
+<!DOCTYPE html> 
+<html> 
+  
+<!-- Mirrored from beyondheaven.neocities.org/homepage by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 25 Oct 2024 14:45:37 GMT -->
+<head>  
+    <meta charset="UTF-8">   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">        
+              
+    <title>Beyond Dreams Doors</title>               
+<link rel="shortcut icon" type="image/x-icon" href="com.gif" />                
+                        
+    <link href="https://fonts.googleapis.com/css?family=Nova%20Slim" rel="stylesheet">                  
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">                
+                                    
+    <link href="moonnight.html" rel="stylesheet" type="text/css" media="all">                                                     
+     <body oncontextmenu="return false;">                                                                   
+   <style>                                                                                      
+   * {	color: rgb(211, 211, 211);                                                                                      
+	box-sizing: border-box;                                                                                  
+	cursor: url("mouse3.html"), auto;}                                                                     
+                                          
+.flex {	display: flex;}                                             
+.clearfix::after {	content: "";                                 
+				clear: both;                         
+				display: table;}                        
+            
+::selection {	background: rgb(211, 211, 211);         
+		color: rgb(211, 211, 211) ;}   
+   
+li:hover, p:hover {	color: rgb(211, 211, 211);}   
+
+i {	color: rgb(211, 211, 211);}
+b {	color: rgb(211, 211, 211);} 
+   
+a, button { color: rgb(211, 211, 211));
+    border: none;
+    background: none;
+    font-family: times;
+    font-size: 16px;
+	  padding: 2px 5px; 
+	  border-radius: 5px;}
+a:hover, button:hover { color: white;
+          text-shadow: 0px 0px 5px grey, 0px 0px 3px grey, 0px 0px 3px grey;
+          background-color: #22223B 0.3;
+          border: 1px solid rgba(72, 60, 50,0.5);
+          padding: 2px 7px;
+          border-radius: 5px;}
+
+h3, h4 { color: rgb(255,180,70);} 
+
+h1 {  color: rgb(255,180,70);
+      text-shadow: 0px 0px 5px rgb(190,70,150);
+      text-align: center;
+      font-size: 12px;
+      }
+
+h2 {	
+  border-width: 1px;
+	border-color: #646372;
+	border-style: none;
+	font-size: 15px;
+	font-family: verdana; 
+	color: #646372;
+	padding: 0px 0px 10px 0px;
+	margin: 5% -2% 1% -2%;} 
+	
+hr { color: grey;
+  background-color: white;
+  margin: 10px 0px;} 
+
+body {	background-color: black;
+       background-image: url("num.gif");
+	    font-family:courier;
+	    margin: 0% 5%;
+	     text-decoration: none;}
+
+.bg {	background-color: rgba(5,0,15,0.8);
+      border-radius: 15px;
+      border: 1px solid #36454F;
+      padding: 1% 10%;
+      margin-bottom: 10px;
+      width: 100%
+        text-decoration: none;
+}
+
+  
+
+.top {  width: 100%;
+        padding: 3% 1%;}
+
+.side { float: left;
+        width: 19%;
+        margin-bottom: 10px;
+        text-decoration: none;
+        border: slategrey;} 
+.main { float: left;
+        margin-left: 2%;
+        margin-right: 2%;
+        width: 60%;
+        padding: 1% 5%;} 
+.half { float: left;
+        width: 50%;
+        padding-right: 5%;}
+.stick { position: sticky;
+          top: 20px;}
+.yea {  position: sticky;
+         top: 180px;}
+
+@media screen and (max-width: 800px) { .side, .main {width: 100%;}
+  .flex {	display: block;}
+  .side {
+    height: 100%;
+    float: none;
+    border-color: #36454F;
+  }
+  .stick {
+    position: static;
+    width: 100%;
+     border-color: #36454F;
+    color: grey;
+  }
+    
+  .main { float: none;
+          margin: 0;
+          margin-bottom: 10px;}
+  .side li {
+    display: inline-block;
+  }
+  .main, .bg {
+        padding: 1% 7%;}}
+
+
+.moon {	border-width: 4px;
+	border-style: none double; 
+	border-color: rgb(230,232,250);
+	border-radius: 50px;
+	padding: 2px 15px;
+	background-color:  rgba(128,128,128,0.06);}   
+	  /* 150,70,150 */ 
+.moon:hover {background-color:  rgba(115, 147, 179,0.07);}
+                                    /* 250,170,0 */
+@media screen and (max-width: 500px) {
+  .moon {
+    padding: 2px 12px;}}
+@media screen and (max-width: 400px) {
+  .moon {
+    padding: 2px 10px;}}
+@media screen and (max-width: 360px) {
+  .moon {
+    padding: 2px 8px;}}
+
+ul {	list-style-type: none;
+      margin: 0px;
+      padding: 0vw 2vw;}
+li {  margin: 5px 0px;}
+.side ul {  list-style: none; 
+  text-decoration: none;
+            padding: 0;
+            margin: 0;
+        }
+li::before {  content: " ✩ ";
+              color: slategrey;}
+li:hover::before { content: " ★ ";}
+.sec li::before { content: " ⋄ ";
+                  color: grey;}
+.parent { 
+  position: relative;}
+.child { 
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  min-width: 190px;}
+.child li::before {  
+  content: none;}
+.child a { 
+  display: block;
+  text-decoration: none;}
+
+.parent:hover .child {
+  display: block;
+	background-color: grey;
+  border-radius: 15px;
+  border: 1px solid grey;
+  padding: 10px;}
+.child a::before {  content: "✩ ";
+              color: grey;}
+.child a::after {  content: " ✩";
+              color: grey;} 
+.child a:hover::before { content: "★ ";} 
+.child a:hover::after { content: " ★";}
+
+</style>
+    <style>
+    body {	
+      font-family: "baskerville"}
+    hr { color: grey;
+          background-color: rgb(190,70,150)
+          margin: 10px 0px;
+          border: 1px solid grey;}
+    .new {
+      border: 1px solid #8992A0;
+      border-radius: 50px;
+      color: white;
+      text-shadow: 0px 0px 5px grey, 0px 0px 3px slategrey;
+      box-shadow: 0px 0px 5px slategrey,
+        0px 0px 5px grey inset;
+      background: url("uh.html");
+      background-position: center;
+      background-size: 300%;
+      padding: 5px 10px;
+      font-weight: bold;
+      display: block;
+      text-align: center;
+      width: max(101px, 90%);
+      margin-left: auto;       
+      margin-right: auto;}
+    .new:hover {
+      color: grey;
+      text-shadow: 0px 0px 8px grey, 0px 0px 5px rgb(84, 83, 82), 0px 0px 3px rgb(84, 83, 82);
+      box-shadow: 0px 0px 8px rgb(84, 83, 82), 0px 0px 5px rgb(84, 83, 82), 0px 0px 3px rgb(84, 83, 82),
+        0px 0px 8px rgb(84, 83, 82) inset, 0px 0px 5px rgb(84, 83, 82) inset, 0px 0px 3px rgb(84, 83, 82) inset;}
+    .button img {
+      margin: 0px;
+      padding: 0px;}
+      
+    .small {
+      width: 25px;
+      height: 25px;
+      border: 1.5px grey;
+      border-radius: 5px;
+      margin: 0px 5px;
+      }
+    .small:hover {
+      border: 1.5px inset grey;} 
+     
+    @keyframes title {
+      0% {text-shadow: 0px 0px 5px rgb(190,70,150), 0px 0px 3px rgb(190,70,150);}
+      15% {text-shadow: 0px 0px 8px rgb(190,70,150), 0px 0px 5px rgb(255,147,50);}
+      30% {text-shadow: 0px 0px 3px rgb(190,70,150);}
+      45% {text-shadow: 0px 0px 8px rgb(190,70,150), 0px 0px 5px rgb(255,147,50)); 
+        color: rgb(230,230,250);}
+      60% {text-shadow: 0px 0px 3px rgb(190,70,150);}
+      75% {text-shadow: 0px 0px 5px rgb(190,70,150), 0px 0px 3px rgb(190,70,150);}
+      95% {text-shadow: 0px 0px 3px rgb(190,70,150);}
+      100% {text-shadow: 0px 0px 5px rgb(190,70,150), 0px 0px 3px rgb(190,70,150);}
+    }
+        
+    h1 {  color:grey;
+    font-size: 50px;
+      text-align: center;
+      animation: title 2s infinite;
+      transition: letter-spacing 2s;}
+    h1:hover {
+      letter-spacing: 5px;}
+      
+    details {
+      display: inline;
+      }
+    details[open] {
+      width: 100%;
+      background-color: black;
+      border-left: 2px double  grey;
+      margin-left: 3%;
+      padding-left: 7px;
+      margin-bottom: 10px;
+    }
+    details a {
+      color: grey;}
+    summary {
+      color:  lightgrey;
+      list-style: none;
+      padding: 2px 5px;
+      text-decoration: underline;}
+      
+    .featured:hover {
+      box-shadow: 0px 0px 8px  grey inset;
+      border: 3px double  grey;}
+      
+    .swatch {
+    	min-width:20px;
+    	height: 20px;
+    	display: inline-block;
+    	float: left;
+    	margin: 0px;
+    	border-radius: 5px;}
+    .colorcode {
+    	display: none;
+    	color: grey;} 
+    .swatch:hover .colorcode {
+    	display: inline;
+    	padding: 0px 5px;}
+    
+    .comments {
+      width: 59%;
+      margin: auto;}
+    
+    .comments h2 {
+      border: 0px solid transparent;
+    	padding: 10px;
+    	margin: 1% 0%;
+    	font-size: 18px;}
+    .comments iframe {
+      display: block;
+      border: 3px solid  grey;
+      border-style: double none; 
+      width: 95%;
+      margin: auto;
+      margin-bottom: 10px;}
+    .gif img {
+      width: 100%;
+      border: 3px double   #8A8AFF;
+      border-radius: 50%;
+      padding: 10px;}
+    .gif a {
+      padding: 0px;
+      margin: 0px;}
+    .gif a:hover {
+      background: transparent;
+      margin: 0px;
+      border: none;
+      padding: 0px;}
+    .buttons img {
+      height: 31px;
+      width: 88px;}
+    .blinkies img {
+       height: 20px; width: 150px;}
+    .featured {
+      max-height: 32vw;}
+    .updates {
+      max-height: 15vw;}
+    .plan {
+      max-height: 10vw;}
+    .newest img {
+      margin: 0px;
+      padding: 0px;
+      border-radius: 5px;
+      border: 1.5px solid grey;}
+    .newest a {
+      display: block;
+      box-sizing: border-box;
+      margin: 5px 0px;
+      padding: 0px;
+      background: none;
+      border: 0px;
+      border-radius: 5px;}
+    .newest a:hover {
+      display: block;
+      margin: 5px 0px;
+      padding: 0px;
+      background: none;
+      border: 0px;
+      width: 100%;}
+    @media screen and (max-width: 800px) {
+      .featured {
+      max-height: none;} 
+      .updates {
+      max-height: 200px;}
+      .plan {
+      max-height: 30vw;}
+    }
+    @media screen and (min-width: 800px) and (max-width: 1055px) {
+      .featured {
+      max-height: 50vw;}
+      .updates {
+      max-height: 200px;}
+      .plan {
+      max-height: none;}
+    }
+    @media screen and (max-width: 445px) {
+      h1 {
+        font-size: 40px;
+        color: #8A8AFF;
+        }
+    
+    }
+    @media screen and (max-width: 800px) { 
+      .comments {
+        width: 100%;}
+      .gif {
+        display: none;}}
+    h1 {
+       padding: 50px 0px 0px 0px;}
+    @media screen and (max-width: 800px) {
+      .top .gif {
+        display: block;}
+    }
+    @media screen and (max-width: 785px) {
+      h1 {
+        padding: 0px;}
+    }
+    @media screen and (max-width: 600px) {
+      .top .gif {
+        display: none;}
+    }
+    @media screen and (max-width: 630px) {
+      h1:hover {
+      letter-spacing: 1px;}
+    }
+    @media screen and (min-width: 810px) and (max-width: 910px) {
+      h1:hover {
+      letter-spacing: 1px;}
+    }
+    @media screen and (min-width: 785px) and (max-width: 810px) {
+      h1:hover {
+      letter-spacing:0px;}
+    }
+    .rainbowtext {
+      background-image: linear-gradient(to right, #e91e63, #ffc107, #009688, #673ab7, #e91e63);
+    	background-clip: text;
+    	-webkit-background-clip: text;
+    	color: transparent;}
+    a.rainbowtext {
+    	text-decoration: underline rgb(135,80,240);}
+    	
+     h3 {
+        font-size: 18px;
+        color: grey;
+        text-decoration: none;
+        }
+        
+.honkgraph {
+background-image: url("My%20Book%20Cover.jpg");
+filter: hue-rotate(360deg)drop-shadow(0px 0px 50px #223C7B);
+animation: glowhonker 5s cubic-bezier(0.2,-2,0.8,2) infinite alternate;
+display: inline-block;
+}
+@keyframes glowhonker {
+  0% {filter:hue-rotate(300deg)drop-shadow(0px 0px 60px #4B5B81);}
+  25% { filter: hue-rotate(150deg)drop-shadow(0px 0px 40px #7E75A6);}
+  50% { filter: hue-rotate(200deg) drop-shadow(0px 0px 60px #8B9DC9);}
+  75% {filter: hue-rotate(250deg)(0px 0px 40px blue);}
+  100% {{filter:hue-rotate(300deg)drop-shadow(0px 0px 60px #223C7B);}
+}
+.skorch {
+    background-image: url("greenskor.html");
+    background-size: 118px 194px;
+    background-repeat: no-repeat;
+    height:194px;
+    width:118px;
+  filter: drop-shadow(0px 0px 50px #223C7B);
+	animation: glowskorch 10s ease-in-out infinite;
+}
+@keyframes glowskorch {
+	0% {
+filter: drop-shadow(0px 0px 50px red)
+hue-rotate(72deg);
+-webkit-filter: hue-rotate(72deg)drop-shadow(0px 0px 50px #4B5B81);
+
+-moz-filter: hue-rotate(72deg)drop-shadow(0px 0px 50px #4B5B81);
+	}
+
+	25% {
+filter: drop-shadow(0px 0px 60px #7E75A6)
+hue-rotate(148deg);
+-webkit-filter: hue-rotate(148deg)drop-shadow(0px 0px 60px #7E75A6);
+-moz-filter: hue-rotate(148deg)drop-shadow(0px 0px 60px #7E75A6);
+	}
+
+	50% {
+filter: drop-shadow(0px 0px 70px #8B9DC9)
+hue-rotate(245deg)saturate(225%);
+-webkit-filter: hue-rotate(245deg) drop-shadow(0px 0px 70px #8B9DC9);
+-moz-filter: hue-rotate(245deg) drop-shadow(0px 0px 70px #8B9DC9);
+}
+	75% {
+filter: 
+hue-rotate(296deg) drop-shadow(0px 0px 60px #4B5B81);
+-webkit-filter: hue-rotate(296deg) drop-shadow(0px 0px 60px #4B5B81);
+-moz-filter: hue-rotate(296deg)drop-shadow(0px 0px 60px #4B5B81);}
+
+	100% {
+filter: 
+hue-rotate(360deg) drop-shadow(0px 0px 50px #223C7B )saturate(225%);
+-webkit-filter: hue-rotate(360deg) drop-shadow(0px 0px 50px #223C7B);
+-moz-filter: hue-rotate(360deg) drop-shadow(0px 0px 50px #223C7B);
+	}
+}
+@keyframes rbpaws {
+  0% {filter:hue-rotate(300deg)drop-shadow(0px 0px 60px #7E75A6);}
+  25% { filter: hue-rotate(150deg)drop-shadow(0px 0px 40px #8B9DC9);}
+  50% { filter: hue-rotate(200deg) drop-shadow(0px 0px 60px #4B5B81);}
+  75% {filter: hue-rotate(250deg)(0px 0px 40px blue);}
+  100% {{filter:hue-rotate(300deg)drop-shadow(0px 0px 60px #7E75A6);}
+}
+h6{
+  color: purple;
+  font-size: 15px;
+}
+
+
+    </style>
+  </head>
+  <body>
+      <h1>✶  BEYOND DREAMS DOORS  ✶</h1>
+    </div>
+    <div style="clear: right">
+      <div class="moon" style="height:40px"><div class="moon" style="height:36px">
+      <div class="moon" style="height:32px"><div class="moon" style="height:28px">
+      <div class="moon" style="height:24px"><div class="moon" style="height:20px">
+      <div class="moon" style="height:16px"><div class="moon" style="height:12px">
+      <div class="moon" style="height:8px"><div class="moon" style="height:4px"></div>
+      </div></div></div></div></div></div></div></div></div> 
+    </div> 
+  </div> <!-- top -->  
+  <br><br> 
+  <div class="flex">
+    <div class="side"> 
+      <div class="stick"> 
+      <div style="text-align: center; font-size: 16px; margin: -20px 0px 5px 0px; padding: 0px;">
+   <br>
+      </div> 
+      <div class="bg">
+        <br> 
+        <b style="color: slategrey;">Navigation</b>
+      
+  <img src="mynewhead.png"  width='170' height='250'> 
+     <br>        <ul>
+  <h2>Films</h2>
+          <li><a href="filmcollection.html" target="_blank">Film Collection (390)</a></li>
+          <li><a href="spectare.html" target="_blank">Films Stills</a></li>
+          <br> 
+          
+          
+ <h2>Art & Other</h2>
+          <li><a href="Gallery.html" target="_blank">My Art Gallery</a></li>
+          <li><a href="Game1.html" target="_blank">Space Invaders Game</a></li>
+          <li><a href="Other.html" target="_blank">Music</a></li>
+          
+          
+          
+<br>   
+  <h2>Writings & Literature</h2>
+          <li><a href="literature.html" target="_blank" >Literature quotes</a></li>
+          <li><a href="radiator.html" target="_blank" >My Poetry</a></li>
+         <li><a href="Interpretation%20%26%20Analysis%20of%20Literature%20and%20Film%20.pdf" target="_blank">My Short Book</a></li>
+<br><h2>General</h2>
+          <li><a href="https://neocities.org/site/beyondthescreens" target="_blank">Website Profile</a></li>
+          <li><a href="https://www.jaywoelfel.com/index.php/films/beyond-dreams-door/reviews/" target="_blank">Director's site</a></li>
+          
+          <li><a href="violencedistrict.html" target="_blank">Who am I?</a></li>
+          <br>   
+   
+              </ul>
+            </details></li>
+            <!-- <span class="child">
+              <a href="https://solaria.neocities.org/rainbows.html" target="_blank">rainbow gradients</a>
+              <a href="https://solaria.neocities.org/bits/index.htm" target="_blank">border image tutorial</a>
+              <a href="https://solaria.neocities.org/readability.html" targe="_blank">dyselxia web design</a>
+              <a href="https://solaria.neocities.org/poems.htm" target="_blank">my poems</a>
+              <a href="https://solaria.neocities.org/pictures/index.htm" target="_blank">my photos</a>
+              <a href="https://solaria.neocities.org/crafts/index.htm" target="_blank">my crafts</a> 
+            </span>-->
+      </div>
+        <div class="bg"> 
+   <H3></h3>
+
+ <img src="mn.gif"  width='180' height='160'> <br>
+<p> </p>
+
+      </div>  
+       
+      </div> <!-- stick -->  
+    </div> <!-- side -->  
+    
+    <div class="main bg">  
+     
+    <!-- https://picrew.me/image_maker/1322863 -->
+<br><br> <center>
+<img src="Beyond.png"    width='280' height='200'>
+<img src="donstill2.png"  width='280' height='200'><br><br><br> 
+<img src="thehanfdsflow.webp"  width='280' height='200'> 
+<img src="orangestill1.png"     width='280' height='200'><br><br><br>
+<img src="profesor.png"    width='280' height='200'>
+<img src="screens.png"    width='280' height='200'>
+<br><br>  
+
+
+<iframe width="660" height="415" src="https://www.youtube.com/embed/zib16hhUKRM?si=dpXBZloa2rPezIMZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<br><br><br>
+
+      </section>
+      
+     <!-- <p style="text-align: center; color: rgb(255,180,70);">✩ ✩ ✩</p>
+      
+      <img src="https://solaria.neocities.org/badges/1vAtYxM.png">
+      <img src="https://solaria.neocities.org/badges/pJrQozw.png">
+      <img src="https://solaria.neocities.org/badges/ePOliyb.png">
+      <img src="https://solaria.neocities.org/badges/QRVupBA.png">
+      <img src="https://solaria.neocities.org/badges/R9IRDDk.png">
+      
+      <img src="https://solaria.neocities.org/badges/eswSnrS.png">
+      <img src="https://solaria.neocities.org/badges/hh5n4WA.png">
+      <img src="https://solaria.neocities.org/badges/vZmPWxA.png">
+      <img src="https://solaria.neocities.org/badges/6kR982D.png">
+      <img src="https://solaria.neocities.org/badges/v4LRrJu.png">
+      
+      <img src="https://solaria.neocities.org/badges/O1BLMLJ.png">
+      <img src="https://solaria.neocities.org/badges/qGabqd5.png">
+      <img src="https://solaria.neocities.org/badges/r8v91MH.png">
+      <img src="https://solaria.neocities.org/badges/k3PfQGk.png">
+      <img src="https://solaria.neocities.org/badges/Sj6j121.png">
+      
+      <p style="text-align: center; color: rgb(255,180,70);">✩ ✩ ✩</p>
+      <img src="https://solaria.neocities.org/badges/glbt.gif">
+      <img src="https://solaria.neocities.org/badges/asexual.png"> 
+      <img src="https://solaria.neocities.org/badges/boygirl.png">
+      <img src="https://solaria.neocities.org/badges/hairy.gif">
+      <img src="https://solaria.neocities.org/badges/big.gif">
+      <img src="https://solaria.neocities.org/badges/brucespringsteen.gif">
+      <img src="https://solaria.neocities.org/badges/cashbutton.gif">
+      <img src="https://solaria.neocities.org/badges/floyd.gif">
+      <img src="https://solaria.neocities.org/badges/mario1.png">
+      <img src="https://solaria.neocities.org/badges/mp3_download.png">
+      <img src="https://solaria.neocities.org/badges/wipe_micro.gif">
+      <imhg src="https://solaria.neocities.org/badges/hand%20coded.png"> -->
+
+      <div>
+<center>
+    <p>Dreams Doors © 2021 - 2024</p>
+     </center>
+  </div>
+      
+      <hr style="color: transparent; border: none; background: none; padding: 0px; margin 0px; clear: left;">
+    </div> <!-- main -->
+    
+<div class="side">
+      <div class="stick">
+      
+      <div class="bg featured"  style="overflow: auto; scrollbar-width: none; scrollbar-color:  transparent; border: 3px solid 8c2778;">
+    <br> 
+    <p class="new">About</p>
+
+     <br>
+       <ul style="padding-bottom: 10px;">
+       <li>The finder of the 'Cultural Philistine' Channel back in mid September of 2021. </li>
+       <br> 
+       <li>1st on tag 'Films'</li>
+        <li>3rd on tag 'Movies'</li>
+        <li>3rd on tag '80s'</li>
+         <li>9th on tag 'horror'</li>
+        
+        <br>
+         <li>Original site name was 'violencedistrict' inspired by the game LSD Dream Emulator</li>
+        <li>Was briefly renamed to 'internetfiles'</li>
+        <br>
+          <li>50,000 views milestone was reached on 26 September, 2022</li>
+          <li>100,000 views milestone was reached on 21 March, 2023</li> 
+          <li>150,000 views milestone was reached on 23 September 2023</li>
+          <li>200,000 views milestone was reached on 28 May 2024</li>
+          <p class="new">Video Games</p>
+          <br>
+          <li>No Players Are Online</li>
+        <br><br>
+ <iframe width="220" height="220" src="https://www.youtube.com/embed/b0yejPK-JIE?si=kWPpr3YX_3_iGlW0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="bg" style="overflow: auto; scrollbar-width: none; scrollbar-color: #8c2778 transparent; height: 320px;" >
+        <br>
+        <ul><b style="color: slategrey">Film Soundtracks</b>
+          <br><br>
+  <a href="https://www.youtube.com/watch?v=4b5WTcePU2k"><br>
+<img src="cderaser.png" width='180' height='180'></a>  <br>
+
+<a href="https://www.youtube.com/watch?v=NGNr2MBjbR4">
+<img src="buffalocd.png"width='180' height='180'></a><br>
+
+<a href="https://www.youtube.com/watch?v=7CzLdg0PpLI">
+<img src="cd.png" width='180' height='180'></a> 
+<br>
+
+<a href="https://www.youtube.com/watch?v=IuY7GsM6tvE">
+<img src="IMG_0875.jpg" width='180' height='180'></a> 
+<br>
+         
+<a href="https://www.youtube.com/watch?v=-MGqVkk3Uss">  
+<img src="workcd.png" width='180' height='180'></a><br>     
+   <br><br>
+        </ul>
+        <br>
+      </div>
+      </div> <!-- stick -->
+    </div> <!-- side -->
+    
+  </div> <!-- flex -->
+ 
+  
+  </div>
+  </body>
+
+<!-- Mirrored from beyondheaven.neocities.org/homepage by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 25 Oct 2024 14:46:07 GMT -->
+</html>
+
