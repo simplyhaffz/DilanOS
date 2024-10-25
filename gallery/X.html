@@ -9,7 +9,8 @@
         body {
             font-family: courier;
             background-color: black;
-            margin: 10px; /* Reduced margin for mobile view */
+            margin: 0; /* Remove default margin */
+            padding: 10px; /* Added padding to body for mobile spacing */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -60,11 +61,13 @@
             .image-row.second img {
                 width: calc(100% - 20px); /* Full width for single column on small screens */
                 height: auto; /* Maintain aspect ratio */
+                margin: 5px 0; /* Added margin to separate images vertically */
             }
 
             .image-row.last img {
                 width: calc(50% - 20px); /* 2 images in last row */
                 height: auto; /* Maintain aspect ratio */
+                margin: 5px; /* Added margin to separate images */
             }
         }
     </style>
