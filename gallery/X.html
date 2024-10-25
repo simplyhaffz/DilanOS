@@ -9,7 +9,7 @@
         body {
             font-family: courier;
             background-color: black;
-            margin: 0; /* Remove default margin */
+            margin: 0;
             padding: 10px; /* Added padding to body for mobile spacing */
             display: flex;
             flex-direction: column;
@@ -18,12 +18,32 @@
 
         p {
             font-family: verdana;
-            font-size: 12px; /* Added px unit */
+            font-size: 12px;
             color: lavender;
         }
 
         header {
             padding: 10px;
+            position: relative;
+            width: 100%;
+            overflow: hidden; /* Hide overflow for the animation */
+        }
+
+        .fade-in-out {
+            color: white;
+            font-size: 2em; /* Font size for the text */
+            text-align: center;
+            opacity: 0; /* Start hidden */
+            animation: fadeInOut 5s ease-in-out infinite; /* Animation for fade in and out */
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% {
+                opacity: 0; /* Fully transparent */
+            }
+            50% {
+                opacity: 1; /* Fully visible */
+            }
         }
 
         .image-row {
@@ -34,25 +54,26 @@
         }
 
         /* Desktop styles */
+        .image-row.first img,
+        .image-row.second img,
+        .image-row.last img {
+            border: darkgrey solid 1px;
+            margin: 0 10px; /* Space between images */
+        }
+
         .image-row.first img {
             width: 300px; /* Fixed width for larger displays */
             height: 375px; /* Fixed height for 4:5 aspect ratio */
-            border: darkgrey solid 1px;
-            margin: 0 10px; /* Space between images */
         }
 
         .image-row.second img {
             width: 400px; /* Fixed width for larger displays */
             height: 300px; /* Fixed height for 4:3 aspect ratio */
-            border: darkgrey solid 1px;
-            margin: 0 10px; /* Space between images */
         }
 
         .image-row.last img {
             width: 300px; /* Fixed width for larger displays */
             height: 375px; /* Fixed height for 4:5 aspect ratio */
-            border: darkgrey solid 1px;
-            margin: 0 10px; /* Space between images */
         }
 
         /* Media query for mobile screens */
@@ -61,32 +82,33 @@
             .image-row.second img {
                 width: calc(100% - 20px); /* Full width for single column on small screens */
                 height: auto; /* Maintain aspect ratio */
-                margin: 5px 0; /* Added margin to separate images vertically */
             }
 
             .image-row.last img {
                 width: calc(50% - 20px); /* 2 images in last row */
                 height: auto; /* Maintain aspect ratio */
-                margin: 5px; /* Added margin to separate images */
             }
         }
     </style>
 </head>
 <body oncontextmenu="return false;">
+    <header>
+        <div class="fade-in-out">A Soul Full of Life</div>
+    </header>
     <center>
         <div class="image-row first">
-            <img src="dln1.jpg" alt="Image 1">
-            <img src="dln2.jpg" alt="Image 2">
-            <img src="dln5.jpg" alt="Image 3">
+            <img src="dln1.jpg" alt="Image 1" width="300" height="375">
+            <img src="dln2.jpg" alt="Image 2" width="300" height="375">
+            <img src="dln5.jpg" alt="Image 3" width="300" height="375">
         </div>
         <div class="image-row second">
-            <img src="dln4.jpg" alt="Image 4">
-            <img src="dln3.jpg" alt="Image 5">
-            <img src="dln6.jpg" alt="Image 6">
+            <img src="dln4.jpg" alt="Image 4" width="400" height="300">
+            <img src="dln3.jpg" alt="Image 5" width="400" height="300">
+            <img src="dln6.jpg" alt="Image 6" width="400" height="300">
         </div>
         <div class="image-row last">
-            <img src="dln7.jpg" alt="Image 7">
-            <img src="dln8.jpg" alt="Image 8">
+            <img src="dln7.jpg" alt="Image 7" width="300" height="375">
+            <img src="dln8.jpg" alt="Image 8" width="300" height="375">
         </div>
     </center>
 </body>
