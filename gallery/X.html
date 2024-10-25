@@ -32,42 +32,39 @@
             flex-wrap: wrap; /* Allow wrapping on smaller screens */
         }
 
-        /* First row with 4:5 aspect ratio */
+        /* Desktop styles */
         .image-row.first img {
-            width: calc(100% / 3 - 20px); /* Responsive width for 3 images */
-            height: auto; /* Maintain aspect ratio */
-            max-height: 375px; /* Max height for larger displays */
+            width: 300px; /* Fixed width for larger displays */
+            height: 375px; /* Fixed height for 4:5 aspect ratio */
             border: darkgrey solid 1px;
             margin: 0 10px; /* Space between images */
         }
 
-        /* Second row with 4:3 aspect ratio */
         .image-row.second img {
-            width: calc(100% / 3 - 20px); /* Responsive width for 3 images */
-            height: auto; /* Maintain aspect ratio */
-            max-height: 300px; /* Max height for larger displays */
+            width: 400px; /* Fixed width for larger displays */
+            height: 300px; /* Fixed height for 4:3 aspect ratio */
             border: darkgrey solid 1px;
             margin: 0 10px; /* Space between images */
         }
 
-        /* Last row with 4:5 aspect ratio */
         .image-row.last img {
-            width: calc(100% / 2 - 20px); /* Responsive width for 2 images */
-            height: auto; /* Maintain aspect ratio */
-            max-height: 375px; /* Max height for larger displays */
+            width: 300px; /* Fixed width for larger displays */
+            height: 375px; /* Fixed height for 4:5 aspect ratio */
             border: darkgrey solid 1px;
             margin: 0 10px; /* Space between images */
         }
 
-        /* Media query for smaller screens */
+        /* Media query for mobile screens */
         @media (max-width: 600px) {
             .image-row.first img,
             .image-row.second img {
                 width: calc(100% - 20px); /* Full width for single column on small screens */
+                height: auto; /* Maintain aspect ratio */
             }
 
             .image-row.last img {
                 width: calc(50% - 20px); /* 2 images in last row */
+                height: auto; /* Maintain aspect ratio */
             }
         }
     </style>
