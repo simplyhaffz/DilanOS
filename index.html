@@ -2,12 +2,153 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Particle Animation</title>
-  <link rel="stylesheet" href="Particle.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trapped particles with shocking connections</title>
+  <style>
+    html { font-size: 15px; }
+    html, body { margin: 0; padding: 0; min-height: 100%; }
+    body { height:100%; display: flex; flex-direction: column; }
+  </style>
+</head>
+
+<body>
+  <div id="result-iframe-wrap" role="main">
+    <iframe
+      id="result"
+      srcdoc="<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Trapped particles with shocking connections</title>
+  <style>
+  body, html {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: #000;
+    overflow: hidden;
+  }
+  </style>
+  <script>
+  // Configure
+  var MAX_DISTANCE = 300,
+      PARTICLES = 25,
+      PARTICLE_SIZE = 5;
+
+  Math.Tau = Math.PI * 2;
+  Math.rand = function rand(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  };
+
+  window.requestAnimFrame = function () {
+    return window.requestAnimationFrame ||
+    window.webkitRequestAnimationFrame ||
+    window.mozRequestAnimationFrame ||
+    function (callback) {
+      window.setTimeout(callback, 1000 / 60);
+    };
+  }();
+
+  window.addEventListener('load', function (event) {
+    var canvas = document.getElementById('c');
+    var context = canvas.getContext('2d');
+    var width, height;
+    var hover = false;
+
+    context.lineWidth = 1;
+
+    var resize = function (event) {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    };resize();
+
+    window.addEventListener('resize', resize);
+
+    canvas.addEventListener('mouseenter', function () {
+      hover = true;
+    });
+
+    canvas.addEventListener('mouseleave', function () {
+      hover = false;
+    });
+
+    var Particle = function Particle(x, y, size, color) {
+      this.x = x;
+      this.y = y;
+      this.s = size;
+      this.r = size / 2;
+      this.vx = (Math.random() < 0.5 ? -1 : 1) * Math.rand(0.5, 2);
+      this.vy = (Math.random() < 0.5 ? -1 : 1) * Math.rand(0.5, 2);
+      this.id = Math.random();  // Simplified ID
+      this.c = color;
+    };
+
+    Particle.prototype.distance = function (that) {
+      return Math.sqrt((this.x - that.x) * (this.x - that.x) + (this.y - that.y) * (this.y - that.y));
+    };
+
+    Particle.prototype.render = function () {
+      context.beginPath();
+      context.arc(this.x, this.y, this.r, 0, Math.Tau);
+      context.fillStyle = this.c;
+      context.fill();
+    };
+
+    var particles = [];
+
+    for (var i = 0; i < PARTICLES; i++) {
+      particles.push(new Particle(Math.rand(0, width), Math.rand(0, height), PARTICLE_SIZE, 'rgb(' + Math.rand(100, 255) + ',' + Math.rand(100, 255) + ',' + Math.rand(100, 255) + ')'));
+    }
+
+    function loop() {
+      context.clearRect(0, 0, width, height);
+
+      for (var i = 0; i < particles.length; i++) {
+        var particle = particles[i];
+
+        if (hover) {
+          for (var j = 0; j < particles.length; j++) {
+            var otherParticle = particles[j];
+            if (particle != otherParticle && particle.distance(otherParticle) < MAX_DISTANCE) {
+              context.beginPath();
+              context.moveTo(particle.x, particle.y);
+              context.lineTo(otherParticle.x, otherParticle.y);
+              context.strokeStyle = particle.c;
+              context.lineWidth = 0.5;
+              context.stroke();
+            }
+          }
+        }
+
+        particle.x += particle.vx;
+        particle.y += particle.vy;
+
+        if (particle.x < 0 || particle.x > width) {
+          particle.vx = -particle.vx;
+        }
+
+        if (particle.y < 0 || particle.y > height) {
+          particle.vy = -particle.vy;
+        }
+
+        particle.render();
+      }
+
+      requestAnimFrame(loop);
+    }
+
+    loop();
+
+  });
+  </script>
 </head>
 <body>
   <canvas id="c"></canvas>
-  <script src="Particle.js"></script>
+</body>
+</html>"
+    ></iframe>
+  </div>
 </body>
 </html>
