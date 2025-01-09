@@ -148,7 +148,7 @@
       composer.addPass(noisePass);
 
       function animate() {
-        requestAnimationFrame(animate);
+        requestAnimationFrame(animate); // licensed by @CD27 (codepen)
         mesh.rotation.x += 0.01;
         mesh.rotation.y += 0.01;
         renderer.render(scene, camera);
@@ -171,15 +171,15 @@
       document.addEventListener('DOMContentLoaded', () => {
         const title1 = document.createElement('h3');
         title1.classList.add('title', '_1');
-        title1.textContent = 'three.js + Radial Gradient';
+        title1.textContent = 'Read Between The Lines';
 
         const title2 = document.createElement('h3');
         title2.classList.add('title', '_2');
-        title2.textContent = 'double click';
+        title2.textContent = 'Where Dream Begins';
 
         const title3 = document.createElement('h3');
         title3.classList.add('title', '_3');
-        title3.textContent = 'fullscreen on';
+        title3.textContent = 'In Collaboration with @CD27';
 
         document.body.appendChild(title1);
         document.body.appendChild(title2);
