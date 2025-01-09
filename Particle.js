@@ -1,22 +1,6 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // Canvas setup
-  const canvas = document.getElementById('c');
-  const context = canvas.getContext('2d');
-  if (!canvas || !context) {
-    console.error('Canvas element or context not found.');
-    return;
-  }
+/* Optimized for full view and Google Chrome or IE11+ */
 
-  // Resize canvas to fit window
-  let width, height;
-  const resizeCanvas = () => {
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
-  };
-  resizeCanvas();
-  window.addEventListener('resize', resizeCanvas);
-
-  // Configure
+// Configure
 var MAX_DISTANCE  = 300,
     PARTICLES     = 25,
     PARTICLE_SIZE = 5;
@@ -55,14 +39,16 @@ window.addEventListener('load', function(event) {
   document.body.appendChild(stats.domElement);
 
   context.lineWidth = 1;
-  
+
+  // Resize the canvas on window resize (added from Code 1)
   var resize = function(event) {
     width  = canvas.width  = window.innerWidth;
     height = canvas.height = window.innerHeight;
   }; resize();
-  
+
   window.addEventListener('resize', resize);
-  
+
+  // Mouse particle (added from Code 1)
   canvas.addEventListener('mouseenter', function() {
     hover = true;
   });
@@ -70,7 +56,7 @@ window.addEventListener('load', function(event) {
   canvas.addEventListener('mouseleave', function() {
     hover = false;
   });
-  
+
   var Particle = function Particle(x, y, size, color) {
     this.x  = x;
     this.y  = y;
@@ -81,11 +67,11 @@ window.addEventListener('load', function(event) {
     this.id = particleCounter++;
     this.c  = color;
   };
-  
+
   Particle.prototype.distance = function(that) {
     return Math.sqrt((this.x-that.x) * (this.x - that.x) + (this.y - that.y) * (this.y - that.y));
   };
-  
+
   Particle.prototype.step = function() {
     this.x += this.vx;
     if(this.x < this.r) {
@@ -95,7 +81,7 @@ window.addEventListener('load', function(event) {
       this.x = width - this.r;
       this.vx *= -1;
     }
-    
+
     this.y += this.vy;
     if(this.y < this.r) {
       this.y = this.r;
@@ -105,7 +91,7 @@ window.addEventListener('load', function(event) {
       this.vy *= -1;
     }
   };
-  
+
   Particle.prototype.render = function() {
     context.fillStyle = this.c;
     context.beginPath();
@@ -113,7 +99,8 @@ window.addEventListener('load', function(event) {
     context.closePath();
     context.fill();
   };
-  
+
+  // Initialize particles (this part is unchanged from Code 2, keeping original behavior)
   var particles = [];
   for(var i = 0; i < PARTICLES - 1; i++) {
     particles.push(
@@ -125,8 +112,8 @@ window.addEventListener('load', function(event) {
       )
     );
   }
-  
-  // this one is controllable by mouse movement.
+
+  // Add mouse particle
   var mouseParticle = new Particle(
     Math.random() * width, 
     Math.random() * height, 
@@ -135,7 +122,6 @@ window.addEventListener('load', function(event) {
   );
   
   mouseParticle.imp = true;
-  
   particles.push(mouseParticle);
 
   var hue = 0;
@@ -143,28 +129,29 @@ window.addEventListener('load', function(event) {
     hue = ((hue + 0.05) % 360);
     context.fillStyle = 'rgba(0, 0, 0, 0.3)';
     context.fillRect(0, 0, width, height);
-    
+
+    // Update mouse particle position based on hover state (added from Code 1)
     if(hover) {
       var pos = mmon.getMousePosition();
       mouseParticle.x = pos.x;
       mouseParticle.y = pos.y;
     }
-    
-    // render all the particles and check distances
+
+    // render all the particles and check distances (unchanged from Code 2)
     var paired = {};
     var ipart  = PARTICLES;
     while(ipart--) {
       var p1    = particles[ipart];
       var jpart = ipart;
-      
+
       p1.step();
       p1.render();
-      
+
       while(jpart--) {
         var p2 = particles[jpart],
             ida = ((p1.id << 16) | p2.id), // generate a pair id to prevent rendering the relationship twice
             idb = ((p2.id << 16) | p1.id); // generate a reverse pair id to prevent rendering the relationship twice
-                   
+
         if(p1 !== p2 && !paired[ida] && !paired[idb]) {
           var distance = p1.distance(p2);
           if(distance < MAX_DISTANCE) {
@@ -172,13 +159,12 @@ window.addEventListener('load', function(event) {
             if(p1.imp) {
               context.strokeStyle = 'rgba(50, 200, 90, ' + alpha + ')';
             } else {
-              //context.strokeStyle = 'rgba(255, 255, 255, ' + alpha + ')';
               context.strokeStyle = 'hsla(' + hue + ', 75%, 50%, ' + alpha + ')';
             }
-            
+
             context.beginPath();
               context.moveTo(p1.x, p1.y); // start from here
-            
+
               // wiggly woggle wob shock!
               for(var currentPoint = 0.25; currentPoint < 1; currentPoint += 0.20) {
                 var ptx = (p1.x + (p2.x - p1.x) * currentPoint),
@@ -186,27 +172,23 @@ window.addEventListener('load', function(event) {
 
                 context.lineTo(ptx + 12 - (Math.random() * 20), pty + 12 - (Math.random() * 20));
               }
-              
+
               // end here!
               context.lineTo(p2.x, p2.y);
-            // context.stroke(); // stroke before closePath, prevent a line back from last point
             context.closePath();
-            context.stroke(); // stroke after closePath, render a line back from last point
-            
+            context.stroke();
+
             paired[ida] = paired[idb] = true;
           }
         }
       }
     }
   };
-  
+
   var loop = function() {
     requestAnimFrame(loop);
     stats.begin();
     render();
     stats.end();
   }; loop();
-});
-  // Start rendering
-  render();
 });
