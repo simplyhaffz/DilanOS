@@ -1,5 +1,23 @@
 /* Optimized for full view and Google Chrome or IE11+ */
 
+document.addEventListener('DOMContentLoaded', () => {
+  // Canvas setup
+  const canvas = document.getElementById('c');
+  const context = canvas.getContext('2d');
+  if (!canvas || !context) {
+    console.error('Canvas element or context not found.');
+    return;
+  }
+
+  // Resize canvas to fit window
+  let width, height;
+  const resizeCanvas = () => {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+  };
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+
 // Configure
 var MAX_DISTANCE  = 300,
     PARTICLES     = 25,
