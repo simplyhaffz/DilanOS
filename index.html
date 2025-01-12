@@ -33,6 +33,8 @@
       margin: 0;
       padding: .5rem;
       text-align: center;
+      opacity: 0;
+      transition: opacity 1s ease-out;
     }
 
     blockquote:before,
@@ -62,6 +64,40 @@
       font-size: 1.5rem;
     }
 
+    /* Style for the arrows */
+    .arrow {
+      position: absolute;
+      bottom: 20px;
+      font-size: 3rem;
+      cursor: pointer;
+      animation: fade 2s infinite alternate;
+      transition: transform 0.3s ease;
+    }
+
+    /* Right arrow position */
+    .right-arrow {
+      right: 20px;
+    }
+
+    /* Left arrow position */
+    .left-arrow {
+      left: 20px;
+    }
+
+    /* Fade animation for arrows */
+    @keyframes fade {
+      0% {
+        opacity: 0.3;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Hover effect */
+    .arrow:hover {
+      transform: scale(1.2);
+    }
   </style>
 </head>
 <body>
@@ -70,6 +106,12 @@
     The man who comes back through the door in the wall will never be quite the same as the man who went out.
   </blockquote>
   <cite>Aldous Huxley</cite>
+
+  <!-- Left arrow for previous quote -->
+  <span id="prevArrow" class="arrow left-arrow">&#8592;</span> <!-- Left arrow -->
+
+  <!-- Right arrow for next quote -->
+  <span id="nextArrow" class="arrow right-arrow">&#8594;</span> <!-- Right arrow -->
 
   <script>
     const quotes = [
@@ -97,20 +139,53 @@
       const quoteElement = document.getElementById('quote');
       const citeElement = document.querySelector('cite');
 
-      quoteElement.textContent = quotes[currentQuoteIndex].text;
+      // Clear the existing quote text with a 'decoding' effect
+      quoteElement.textContent = '';
+      citeElement.textContent = '';
+
+      // Simulate a "decoding" effect (randomly changing characters)
+      let decodedText = quotes[currentQuoteIndex].text;
+      let scrambledText = scrambleText(decodedText);
+
+      let i = 0;
+      let interval = setInterval(() => {
+        quoteElement.textContent = scrambledText.substring(0, i++);
+        if (i > decodedText.length) {
+          clearInterval(interval);
+          quoteElement.textContent = decodedText; // Final decoded quote
+        }
+      }, 50); // Adjust speed of decoding (50ms per character)
+
       citeElement.textContent = quotes[currentQuoteIndex].author;
     }
 
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'ArrowRight') {
-        currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
-        updateQuote();
-      } else if (event.key === 'ArrowLeft') {
-        currentQuoteIndex = (currentQuoteIndex - 1 + quotes.length) % quotes.length;
-        updateQuote();
-      }
+    // Function to generate scrambled text
+    function scrambleText(text) {
+      const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+[]{}|;:,.<>?';
+      return text.split('').map(char => {
+        if (Math.random() > 0.3) {
+          return char;
+        } else {
+          return characters[Math.floor(Math.random() * characters.length)];
+        }
+      }).join('');
+    }
+
+    // Next quote functionality
+    document.getElementById('nextArrow').addEventListener('click', () => {
+      currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+      updateQuote();
     });
 
+    // Previous quote functionality
+    document.getElementById('prevArrow').addEventListener('click', () => {
+      currentQuoteIndex = (currentQuoteIndex - 1 + quotes.length) % quotes.length;
+      updateQuote();
+    });
+
+    // Initialize the first quote
+    updateQuote();
   </script>
+
 </body>
 </html>
