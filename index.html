@@ -354,26 +354,38 @@ div{
   background-color: #B93C3D; /* Rich maroon to complement the red */
 }
 
-.passbook .symbol .h_line{
-  width: 100%;
-  top: 50%;
-  border-top: 2px solid #FFD700; /* Gold horizontal line for symmetry */
-}
-
-.passbook .symbol .v_line{
-  height: 100%;
-  left: 50%;
-  border-right: 2px solid #FFD700; /* Gold vertical line for a cross shape */
-}
-
-.passbook .symbol .inner_circle{
-  height: 100%;
-  width: 50%;
+.passbook .symbol {
+  border: 2px solid #FFD700; /* Gold border */
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
-  border: 2px solid #FFD700; /* Gold inner circle border */
-  left: 25%;
-  top: -2px;
+  margin: 30px auto;
+  position: relative; /* Needed for positioning the crescent and star */
+  background-color: #B93C3D; /* Rich maroon */
 }
+
+.passbook .crescent {
+  width: 50px;
+  height: 50px;
+  background-color: #B93C3D; /* Same as background to match the color */
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 10px; /* Adjust to create the crescent effect */
+  z-index: 1; /* Ensure it’s above the star */
+}
+
+.passbook .star {
+  position: absolute;
+  top: 10px;
+  left: 14px;
+  width: 20px;
+  height: 20px;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  background-color: #FFD700; /* Gold star color */
+  z-index: 2; /* Ensure it’s above the crescent */
+}
+
 
 .passbook .details1{
   height: 2px;
@@ -654,9 +666,9 @@ div{
 
       <div class="pa passbook hover">
         <div class="pr symbol">
-          <div class="pa h_line"></div>
-          <div class="pa v_line"></div>
-          <div class="pa inner_circle"></div>
+         <div class="pa crescent"></div> <!-- Crescent shape -->
+    <div class="pa star"></div> <!-- Star inside the crescent -->
+          >
         </div>
         <div class="details1"></div>
         <div class="details2"></div>
