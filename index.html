@@ -1,223 +1,692 @@
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Between The Lines</title>
-    <style>
-      body { margin: 0; overflow: hidden; user-select: none;}
-      canvas { display: block; }
-    </style>
-  </head>
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Work Desk</title>
+
+</head>
+<body>
+
+<script>
+
+  html,body{
+  background-color: #CCA283;
+  padding: 0;
+  margin:0;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0 !important;
+  height: 0;
+}
+.container{
+  position: relative;
+  margin: 2% auto 0 auto;
+  width: 900px;  
+}
+.pr{
+  position: relative;
+}
+.pa{
+  position: absolute;
+}
+.ftl{
+  float: left;
+}
+.pad-lr-10{
+  padding: 0 10px;
+}
+.mackbook{
+  left: 285px;
+  top: 75px;
+}
+.mackbook .screen{
+  height: 150px;
+  width: 250px;
+  background-color: #3C5996;
+  border: 10px solid #151822;
+  border-radius: 5px;
+}
+.mackbook .screen .user_pic{
+  margin: 20px auto 15px auto;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  background-color: #B1BDD5;
+}
+.mackbook .screen .password{
+  background-color: #fff;
+  height: 15px;
+  width: 100px;
+  border-radius: 20px;
+  margin: 0 auto;
+}
+.mackbook .screen .icons{
+  margin: 27px auto 0px auto;
+  width: 75px;
+}
+.mackbook .screen .icons .icon{
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: #344C7F;
+  float: left;
+  margin: 0 5px;
+}
+.mackbook .base{
+  height: 185px;
+  width: 270px;
+  background-color: #E8E8EB;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom: 8px solid #A6856E;
+}
+.mackbook .base .connector{
+  background-color: #151822;
+  height: 8px;
+  width: 170px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin: 0 auto;
+}
+.mackbook .base .keypad{
+ background-color: #C2CBDE;
+  height: 85px;
+  width: 250px;
+  margin: 10px auto;
+  border-radius: 5px;
+  padding: 3px;
+}
+.mackbook .base .keypad .key{
+  height: 17px;
+  border-radius: 4px;
+  background-color: #151822;
+  margin: 2px;
+  /*box-shadow: 0px 2px 1px #6F7584;*/
+}
+.mackbook .base .keypad .key1{
+  width: 18px;
+}
+.mackbook .base .keypad .key2{
+  width: 32px;
+}
+.mackbook .base .keypad .key3{
+  width: 90px;
+}
+.mackbook .base .touchpad{
+  background-color: #C2CBDE;
+  height: 59px;
+  width: 100px;
+  border-radius: 5px;
+  margin: -5px auto 5px auto;
+}
+.mackbook .base .shadow{
+  width: 100%;
+  height: 6px;
+  background-color: #C2CBDE;
+  bottom: 0px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+div{
+  -webkit-transition: ease 0.2s;
+    -moz-transition: ease 0.2s;
+    -ie-transition: ease 0.2s;
+    -o-transition: ease 0.2s;
+      transition: ease 0.2s;
+}
+.hover:hover{
+  /*margin-top: -7px;*/
+  transform: scale(1.1, 1.1)
+}
+
+.mouse{
+  height: 96px;
+  width: 60px;
+  background-color: #fff;
+  left: 580px;
+  top: 375px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-bottom: 5px solid #A6856E;
+}
+.mouse .scroller{
+  background-color: #C2CBDE;
+  left: 28px;
+  width: 3px;
+  border-radius: 10px;
+  height: 15px;
+  top: 16px;
+}
+
+.phone{
+  background-color: #20232C;
+  height: 180px;
+  width: 90px;
+  border-radius: 10px;
+  border-bottom: 5px solid #A6856E;
+  left: 680px;
+  top: 300px;
+}
+.phone .speaker{
+  background-color: #EDEDF0;
+  height: 3px;
+  width: 15px;
+  border-radius: 5px;
+  margin: 8px auto;
+}
+.phone .screen{
+  background-color: #262E41;
+  width: 80%;
+  margin: 0 auto;
+  height: 135px;
+}
+.phone .screen .screen_data{
+  background-color: #3C5997;
+  width: 100%;
+  height: 7px;
+}
+.phone .button{
+  height: 15px;
+  width: 15px;
+  background-color: #EDEDF0;
+  border-radius: 50%;
+  margin: 6px auto;
+}
+.phone .volume_rockers{
+  background-color: #20232C;
+  height: 24px;
+  width: 5px;
+  top: 25px;
+  left: -2px;
+  border-radius: 10px;
+}
+
+.notes{
+  height: 130px;
+  width: 120px;
+  background-color: #EFD171;
+  border-bottom: 5px solid #A9876E;
+  left: 700px;
+  top: 110px;
+} 
+.notes .note{
+  height: 95%;
+  width: 100%;
+  background-color: #FFE882;
+}
+.notes .note:after{
+  content: '';
+  border-left: 10px solid #FFF1B4;
+  border-top: 10px solid #FFF1B4;
+  border-right: 10px solid #EFD171;
+  border-bottom: 10px solid #EFD171;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+
+.pen{
+  background-color: #fff;
+  width: 15px;
+  height: 120px;
+  left: 600px;
+  top: 230px;
+}
+.pen .pen-nip{
+  border-bottom: 22px solid #3C5996;
+  border-left: 8px solid transparent;
+  border-right: 7px solid transparent;
+  width: 0;
+  height: 0;
+  margin-top: -22px;
+} 
+.pen .pen-nip .pen-tip{
+  background-color: #fff;
+  height: 2px;
+  width: 32%;
+  top: -16px;
+  position: absolute;
+  left: 5.5px;
+  border-radius: 7px;
+}
+.pen .pen-bottom{
+  bottom: 0px;
+  background-color: #3C5996;
+  width: 100%;
+  height: 4px;
+  border-bottom: 3px solid #A9876E;
+}
+
+.handwatch{
+  left: 620px;
+  top: 0px;
+  height: 200px;
+  width: 150px;
+}
+.handwatch .belt{
+  background-color: #151822;
+  height: 180px;
+  width: 50px;
+  border-radius: 10px;
+  border-bottom: 5px solid #A6856E;
+}
+.handwatch .dial{
+  background-color: #fff;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 5px solid #8F8A8F;
+  top: 52px;
+  left: -10px;
+}
+.sun-hand{
+  height: 8px;
+  width: 8px;
+  background-color: #181B25;
+  border-radius: 50%;
+  top: 24px;
+  left: 26px;
+  z-index: 2;
+}
+.handwatch .dial .hand1{
+  width: 2px;
+  height: 23px;
+  background-color: #A5A9B2;
+  left: 29px;
+  top: 5px;
+}
+.handwatch .dial .hand2{
+  width: 2px;
+  height: 18px;
+  background-color: #A5A9B2;
+  left: 33px;
+  top: 13px;
+  transform: rotate(40deg);
+}
+.handwatch .dial .button1{
+  height: 4px;
+  width: 4px;
+  background-color: #63636C;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  right: -4px;
+  top: 10px;
+  transform: rotate(-34deg);
+}
+.handwatch .dial .button2{
+  height: 4px;
+  width: 4px;
+  background-color: #63636C;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  right: -8px;
+  top: 20px;
+  transform: rotate(-7deg);
+}
+
+
+.passbook{
+  background-color: #26385A;
+  height: 170px;
+  width: 140px;
+  top: 15px;
+  left: 0px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom: 5px solid #A6856E;
+}
+.passbook .symbol{
+  border: 2px solid #FFDAA0;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin: 30px auto;
+}
+.passbook .symbol .h_line{
+  width: 100%;
+  top: 50%;
+  border-top: 2px solid #FFDAA0;
+}
+.passbook .symbol .v_line{
+  height: 100%;
+  left: 50%;
+  border-right: 2px solid #FFDAA0;
+}
+.passbook .symbol .inner_circle{
+  height: 100%;
+  width: 50%;
+  border-radius: 50%;
+  border: 2px solid #FFDAA0;
+  left: 25%;
+  top: -2px;
+}
+.passbook .details1{
+  height: 2px;
+  width: 10%;
+  background-color: #F9FAFB;
+  margin: 15px auto;
+}
+.passbook .details2{
+  height: 4px;
+  width: 30%;
+  border-radius: 5px;
+  background-color: #FFDAA0;
+  margin: 10px auto;
+}
+.passbook .details3{
+  height: 4px;
+  width: 40%;
+  border-radius: 5px;
+  background-color: #F9FAFB;
+  margin: 10px auto;
+}
+
+.diary{
+  height: 190px;
+  width: 120px;
+  top: 410px;
+  left: 40px;
+  border-bottom: 5px solid #A6856E;
+}
+.diary .main{
+  border: 5px solid #151822;
+  border-top: none;
+  background-color: #FFF;
+  height: 100%; 
+  width: 100%;
+  border-bottom-right-radius: 15px;
+}
+.diary .main .cover{
+  background-color: #151822;
+  width: 115%;
+  height: 95%;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.diary .main .cover .less{
+  background-color: #3C5996;
+  width: 7px;
+  height: 95%;
+  right: 10px;
+}
+
+
+.pencil{
+  background-color: #FFE882;
+  width: 15px;
+  height: 120px;
+  left: 230px;
+  top: 200px;
+}
+.pencil .pencil-nip{
+  border-bottom: 22px solid #F3C6A9;
+  border-left: 8px solid transparent;
+  border-right: 7px solid transparent;
+  width: 0;
+  height: 0;
+  margin-top: -22px;
+} 
+.pencil .pencil-nip .pencil-tip{
+  border-bottom: 8px solid #151822;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  height: 0px;
+  width: 0px;
+  top: -22px;
+  position: absolute;
+  left: 5px;
+}
+.pencil .pencil-bottom{
+  bottom: 0px;
+  background-color: #FF859F;
+  width: 100%;
+  height: 15px;
+  border-bottom: 5px solid #A9876E;
+}
+
+.lock{
+  top: 380px;
+  left: 200px;
+  border-bottom: 5px solid #A9876E;
+  border-radius: 32px;
+}
+.lock .locker{
+  background-color: #272A34;
+  border: 5px solid #F8F8F9;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+.lock .locker .key_hole{
+  background-color: #BBBCBF;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  top: 20px;
+  left: 20px;
+}
+.lock .locker .key_hole:after{
+  position: absolute;
+  content: '';
+  background-color: #BBBCBF;
+  height: 10px;
+  width: 3px;
+  border-radius: 5px;
+  top: 7px;
+  left: 3px;
+}
+.lock .handle{
+  height: 30px;
+  width: 30px;
+  border: 5px solid #E8E8EB;
+  border-bottom: 0;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  margin-left: 10px;
+  margin-bottom: -7px;
+}
+
+
+.mug{
+  left: 65px;
+  top: 220px;
+  background-color: #FFFFFF;
+  height: 160px;
+  width: 100px;
+  border-radius: 50px;
+  border-bottom: 15px solid #A9876E;
+}
+.mug .mug_head{
+  height: 85px;
+  width: 85px;
+  background-color: #C2CBDE;
+  margin-left: 7px;
+  margin-top: 7px; 
+  border-radius: 50%;
+  z-index: 2;
+}
+.mug .mug_head .coffee{
+  background-color: #49362E;
+  height: 72px;
+  width: 82px;
+  border-radius: 50%;
+  left: 2px;
+  bottom: 0px;
+  z-index: 1;
+}
+.mug .mug_head .ear{
+  height: 45px;
+  width: 50px;
+  right: -37px;
+  top: 39px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+}
+  
+</script>
+
+<!-- partial:index.partial.html -->
+<html>
+<head>
+  <title>Work Desk</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
   <body>
-    <script type="module">
-      import * as THREE from 'https://cdn.skypack.dev/three@0.136.0/build/three.module.js';
-      import { OrbitControls } from 'https://cdn.skypack.dev/three@0.136.0/examples/jsm/controls/OrbitControls.js';
-      import { OBJLoader } from 'https://cdn.skypack.dev/three@0.136.0/examples/jsm/loaders/OBJLoader.js';
-      import { FontLoader } from 'https://cdn.skypack.dev/three@0.136.0/examples/jsm/loaders/FontLoader.js';
-      import { TextGeometry } from 'https://cdn.skypack.dev/three@0.136.0/examples/jsm/geometries/TextGeometry.js';
-      import { EffectComposer } from 'https://cdn.skypack.dev/three@0.136.0/examples/jsm/postprocessing/EffectComposer.js';
-      import { RenderPass } from 'https://cdn.skypack.dev/three@0.136.0/examples/jsm/postprocessing/RenderPass.js';
-      import { UnrealBloomPass } from 'https://cdn.skypack.dev/three@0.136.0/examples/jsm/postprocessing/UnrealBloomPass.js';
-      import { GlitchPass } from 'https://cdn.skypack.dev/three@0.136.0/examples/jsm/postprocessing/GlitchPass.js';
-      import { ShaderPass } from 'https://cdn.skypack.dev/three@0.136.0/examples/jsm/postprocessing/ShaderPass.js';
-      import { gsap } from 'https://cdn.skypack.dev/gsap@3.9.1';
+    <div class="container clearfix">
+      <div class="pa mackbook hover">
+        <div class="screen">
+          <div class="user_pic"></div>
+          <div class="password"></div>
+          <div class="icons clearfix">
+            <div class="icon"></div>
+            <div class="icon"></div>
+            <div class="icon"></div>
+          </div>
+        </div>
+        <div class="base pr">
+          <div class="connector"></div>
+          <div class="keypad">
+            <div class="clearfix">
+              <div class="ftl key key2"></div>
+              <div class="ftl key key1"></div>
+              <div class="ftl key key1"></div>
+              <div class="ftl key key1"></div>
+              <div class="ftl key key1"></div>
+              <div class="ftl key key1"></div>
+              <div class="ftl key key1"></div>
+              <div class="ftl key key1"></div>
+              <div class="ftl key key1"></div>
+              <div class="ftl key key2"></div>
+            </div>
+            <div class="clearfix pad-lr-10">
+              <div class="ftl key key1"></div>
+              <div class="ftl key key1"></div>
+              <div class="ftl key key1"></div>
+              <div class="ftl key key1"></div>
+              <div class="ftl key key1"></div>
+              <div class="ftl key key1"></div>
+              <div class="ftl key key1"></div>
+              <div class="ftl key key1"></div>
+              <div class="ftl key key1"></div>
+              <div class="ftl key key1"></div>
+            </div>
+            <div class="clearfix">
+              <div class="ftl key key2"></div>
+              <div class="ftl key key1"></div>
+              <div class="ftl key key1"></div>
+              <div class="ftl key key1"></div>
+              <div class="ftl key key1"></div>
+              <div class="ftl key key1"></div>
+              <div class="ftl key key1"></div>
+              <div class="ftl key key1"></div>
+              <div class="ftl key key1"></div>
+              <div class="ftl key key2"></div>
+            </div>
+            <div class="clearfix pad-lr-10">
+              <div class="ftl key key1"></div>
+              <div class="ftl key key1"></div>
+              <div class="ftl key key1"></div>
+              <div class="ftl key key3"></div>
+              <div class="ftl key key1"></div>
+              <div class="ftl key key1"></div>
+              <div class="ftl key key1"></div>
+            </div>
+          </div>
+          <div class="touchpad"></div>
+          <div class="pa shadow"></div>
+        </div>
+      </div>
 
-      const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-      const renderer = new THREE.WebGLRenderer();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      document.body.appendChild(renderer.domElement);
-      const controls = new OrbitControls(camera, renderer.domElement);
-      controls.enableDamping = true;
+      <div class="pa mouse hover">
+        <div class="pa scroller"></div>
+      </div>
 
-      const vertexShader = `
-      varying vec2 vUv;
-      void main() {
-        vUv = uv;
-        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-      }
-      `;
+      <div class="pa phone hover">
+        <div class="speaker"></div>
+        <div class="screen">
+          <div class="screen_data"></div>
+        </div>
+        <div class="button"></div>
+        <div class="pa volume_rockers"></div>
+      </div>
 
-      const fragmentShader = (color1, color2) => `
-      varying vec2 vUv;
-      void main() {
-        vec2 center = vec2(0.5, 0.5);
-        float distance = distance(vUv, center);
-        vec3 color = mix(${color1}, ${color2}, distance);
-        gl_FragColor = vec4(color, 1.0);
-      }
-      `;
+      <div class="pa notes hover">
+        <div class="note pr"></div>
+      </div>
 
-      const getRandomColor = () => {
-        return `vec3(${Math.random().toFixed(2)}, ${Math.random().toFixed(2)}, ${Math.random().toFixed(2)})`;
-      };
+      <div class="pa pen hover">
+        <div class="pen-nip">
+          <div class="pen-tip"></div>
+        </div>
+        <div class="pa pen-bottom"></div>
+      </div>
 
-      let material = new THREE.ShaderMaterial({
-        vertexShader: vertexShader,
-        fragmentShader: fragmentShader(getRandomColor(), getRandomColor()),
-        wireframe: true,
-        side: THREE.DoubleSide
-      });
+      <div class="pa handwatch hover">
+        <div class="pr">
+          <div class="belt"></div>
+          <div class="pa dial">
+            <div class="pa sun-hand"></div>
+            <div class="pa hand1"></div>
+            <div class="pa hand2"></div>
+            <div class="pa button1"></div>
+            <div class="pa button2"></div>
+          </div>
+        </div>
+      </div>
 
-      const geometries = [
-        new THREE.BoxGeometry(6, 6, 6),
-        new THREE.CircleGeometry(6, 32),
-        new THREE.CylinderGeometry(3, 3, 6, 32),
-        new THREE.ConeGeometry(3, 6, 32),
-        new THREE.PlaneGeometry(6, 6),
-        new THREE.RingGeometry(2, 6, 32),
-        new THREE.SphereGeometry(4, 64, 64),
-        new THREE.TorusGeometry(3, 1, 16, 100),
-        new THREE.TorusKnotGeometry(3, 1, 100, 16),
-        new THREE.TubeGeometry(new THREE.CatmullRomCurve3([new THREE.Vector3(-3, 0, 0), new THREE.Vector3(0, 3, 0), new THREE.Vector3(3, 0, 0)]), 64, 1, 8, false),
-        new THREE.PolyhedronGeometry([1, 1, 1, -1, -1, -1, 1, -1, 1, -1, 1, -1], [0, 1, 2, 1, 2, 3, 2, 3, 0, 3, 0, 1], 6, 2),
-        new THREE.DodecahedronGeometry(6),
-        new THREE.IcosahedronGeometry(6),
-        new THREE.OctahedronGeometry(6),
-        new THREE.TetrahedronGeometry(6)
-      ];
+      <div class="pa passbook hover">
+        <div class="pr symbol">
+          <div class="pa h_line"></div>
+          <div class="pa v_line"></div>
+          <div class="pa inner_circle"></div>
+        </div>
+        <div class="details1"></div>
+        <div class="details2"></div>
+        <div class="details3"></div>
+      </div>
 
-      let currentGeometryIndex = 0;
-      let mesh = new THREE.Mesh(geometries[currentGeometryIndex], material);
-      scene.add(mesh);
+      <div class="pa diary hover">
+        <div class="main">
+          <div class="cover">
+            <div class="pa less"></div>
+          </div>
+        </div>
+      </div>
 
-      let wireframeEnabled = true;
-      window.addEventListener('dblclick', () => {
-        scene.remove(mesh);
-        currentGeometryIndex = (currentGeometryIndex + 1) % geometries.length;
-        wireframeEnabled = !wireframeEnabled;
-        material = new THREE.ShaderMaterial({
-          vertexShader: vertexShader,
-          fragmentShader: fragmentShader(getRandomColor(), getRandomColor()),
-          wireframe: wireframeEnabled,
-          side: THREE.DoubleSide
-        });
-        mesh = new THREE.Mesh(geometries[currentGeometryIndex], material);
-        scene.add(mesh);
-      });
+      <div class="pa pencil hover">
+        <div class="pa pencil-bottom"></div>
+        <div class="pencil-nip">
+          <div class="pencil-tip"></div>
+        </div>
+      </div>
 
+      <div class="pa lock hover">
+        <div class="handle"></div>
+        <div class="pr locker">
+          <div class="pa key_hole"></div>
+        </div>
+      </div>
 
-      camera.position.z = 10;
+      <div class="pa mug hover">
+        <div class="pr mug_head">
+          <div class="pa coffee"></div>
+          <div class="pa ear"></div>
+        </div>
+      </div>
 
-      const composer = new EffectComposer(renderer);
-      const renderPass = new RenderPass(scene, camera);
-      composer.addPass(renderPass);
-
-      const glitchPass = new GlitchPass();
-      glitchPass.goWild = false;
-      glitchPass.SPORADIC = true;
-      glitchPass.delay = [8.5, 9.5];
-      glitchPass.duration = [0.0005, 0.00025];
-      glitchPass.blending = THREE.ScreenBlending;
-      composer.addPass(glitchPass);
-
-      const bloomPass = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 1.5, 0.4, 0.85);
-      bloomPass.threshold = 0.21;
-      bloomPass.strength = 0.2;
-      bloomPass.radius = 1.05;
-      composer.addPass(bloomPass);
-
-      let noisePass;
-      const noiseShader = {
-        uniforms: {
-          'tDiffuse': { value: null },
-          'amount': { value: 0.1 }
-        },
-        vertexShader: `
-          varying vec2 vUv;
-          void main() {
-            vUv = uv;
-            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-          }
-        `,
-        fragmentShader: `
-          uniform sampler2D tDiffuse;
-          uniform float amount;
-          varying vec2 vUv;
-          float rand(vec2 co) {
-            return fract(sin(dot(co.xy, vec2(12.9898, 78.233))) * 43758.5453);
-          }
-          void main() {
-            vec4 color = texture2D(tDiffuse, vUv);
-            float noise = rand(gl_FragCoord.xy) * amount;
-            gl_FragColor = vec4(color.rgb + noise, color.a);
-          }
-        `
-      };
-      noisePass = new ShaderPass(noiseShader);
-      composer.addPass(noisePass);
-
-      function animate() {
-        requestAnimationFrame(animate); // licensed by @CD27 (codepen)
-        mesh.rotation.x += 0.01;
-        mesh.rotation.y += 0.01;
-        renderer.render(scene, camera);
-        controls.update();
-        composer.render();
-      }
-
-      animate();
-
-      window.addEventListener('resize', onWindowResize, false);
-
-      function onWindowResize() {
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        composer.setSize(window.innerWidth, window.innerHeight);
-      }
-
-
-      document.addEventListener('DOMContentLoaded', () => {
-        const title1 = document.createElement('h3');
-        title1.classList.add('title', '_1');
-        title1.textContent = 'Read Between The Lines';
-
-        const title2 = document.createElement('h3');
-        title2.classList.add('title', '_2');
-        title2.textContent = 'Where Dream Begins';
-
-        const title3 = document.createElement('h3');
-        title3.classList.add('title', '_3');
-        title3.textContent = 'In Collaboration with @CD27';
-
-        document.body.appendChild(title1);
-        document.body.appendChild(title2);
-        document.body.appendChild(title3);
-
-        const titles = document.querySelectorAll('.title');
-
-        titles.forEach(title => {
-          title.style.position = 'absolute';
-          title.style.fontFamily = 'arial';
-          title.style.color = '#fff';
-          title.style.fontSize = '.8rem';
-        });
-
-        title1.style.top = '20px';
-        title1.style.left = '30px';
-
-        title2.style.bottom = '20px';
-        title2.style.left = '30px';
-
-        title3.style.bottom = '20px';
-        title3.style.right = '30px';
-        title3.style.fontSize = '.8rem';
-        title3.style.cursor = 'pointer';
-
-        title3.addEventListener('click', toggleFullscreen);
-      });
-
-      function toggleFullscreen() {
-        if (!document.fullscreenElement) {
-          document.documentElement.requestFullscreen();
-          title3.textContent = 'fullscreen off';
-        } else if (document.exitFullscreen) {
-          document.exitFullscreen();
-          title3.textContent = 'fullscreen on';
-        }
-      }
-    </script>
+    </div>
   </body>
 </html>
-
+<!-- partial -->
+  
+</body>
+</html>
