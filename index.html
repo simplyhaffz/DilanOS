@@ -334,61 +334,73 @@ div{
 }
 
 
-.passbook{
-  background-color: #26385A;
+.passbook {
+  background-color: #E30A17; /* Turkish flag red */
   height: 170px;
   width: 140px;
   top: 15px;
   left: 0px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  border-bottom: 5px solid #A6856E;
+  border-bottom: 5px solid #FFFFFF; /* White border to reflect the flag's crescent */
 }
-.passbook .symbol{
-  border: 2px solid #FFDAA0;
+
+.passbook .symbol {
+  border: 2px solid #FFFFFF; /* White for the crescent */
   height: 50px;
   width: 50px;
   border-radius: 50%;
   margin: 30px auto;
+  position: relative;
 }
-.passbook .symbol .h_line{
+
+.passbook .symbol .h_line {
   width: 100%;
   top: 50%;
-  border-top: 2px solid #FFDAA0;
+  border-top: 2px solid #FFFFFF;
+  position: absolute;
 }
-.passbook .symbol .v_line{
+
+.passbook .symbol .v_line {
   height: 100%;
   left: 50%;
-  border-right: 2px solid #FFDAA0;
+  border-right: 2px solid #FFFFFF;
+  position: absolute;
 }
-.passbook .symbol .inner_circle{
+
+.passbook .symbol .inner_circle {
   height: 100%;
   width: 50%;
   border-radius: 50%;
-  border: 2px solid #FFDAA0;
+  border: 2px solid #FFFFFF;
   left: 25%;
   top: -2px;
+  position: absolute;
 }
-.passbook .details1{
+
+.passbook .details1 {
   height: 2px;
   width: 10%;
-  background-color: #F9FAFB;
+  background-color: #FFFFFF; /* White details */
   margin: 15px auto;
 }
-.passbook .details2{
+
+.passbook .details2 {
   height: 4px;
   width: 30%;
   border-radius: 5px;
-  background-color: #FFDAA0;
+  background-color: #FFFFFF; /* White details */
   margin: 10px auto;
 }
-.passbook .details3{
+
+.passbook .details3 {
   height: 4px;
   width: 40%;
   border-radius: 5px;
-  background-color: #F9FAFB;
+  background-color: #FFFFFF; /* White details */
   margin: 10px auto;
 }
+
 
 .diary{
   height: 190px;
